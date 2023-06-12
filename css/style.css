@@ -44,3 +44,24 @@ i:hover{
 .active-item{
     background-color: lightgray;
 }
+
+.bg-chat{
+    background-image: url(../img/mine.jpg);
+    background-size:auto;
+    background-attachment: fixed;
+    height: 750px;
+
+}
+
+.msg{
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.sended{
+    background-color: #d5f9ba;
+}
+
+.recived{
+    background-color: white;
+}

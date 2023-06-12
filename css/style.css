@@ -25,3 +25,13 @@ i{
     font-size: 20pt;
     color: #b1b1b1;
 }
+
+i:hover{
+    cursor: pointer;
+    color: grey;
+}
+
+.last-seen{
+    font-size: 10pt;
+    color: #b1b1b1;
+}

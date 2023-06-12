@@ -35,3 +35,8 @@ i:hover{
     font-size: 10pt;
     color: #b1b1b1;
 }
+
+.last-seen:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}

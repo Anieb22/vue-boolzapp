@@ -84,20 +84,24 @@
                     <div class="col-7">
                         <div class="bg-chat overflow-y-scroll">
                             <div class="col-12 d-flex justify-content-end">
-                                <div class="col-6 d-flex justify-content-end">
-                                    <div class="col-12 msg sended m-3">
-                                        <p class="p-2 mb-0 text-end"></p>
-                                        <div class="col-12 mt-0 last-seen p-1 text-end">
-                                            11:32
-                                        </div>
+                                <div class="col-6 d-flex align-items-end flex-column">
+                                    <div class="col-12 msg m-3" v-for="(message, index) in contacts[activeChat].messages" :key="index">
+                                        <ul class="list-group">
+                                            <li class="list-group-item sended p-2 mb-0 text-end">
+                                                {{ message.message }}
+                                                <div class="col-12 mt-0 last-seen p-1 text-end">
+                                                    {{ message.date }}
+                                                </div>    
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>    
                             </div>
-                            <div class="col-6 w-50 d-flex justify-content-start">
-                                <div class="col-12 msg recived m-3">
-                                    <p class="p-2 mb-0 text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui temporibus maiores earum laudantium at iste, pariatur molestias error quisquam deleniti quae dolorum maxime autem laborum expedita, asperiores quo suscipit. Exercitationem!</p>
+                            <div class="col-6 w-50 d-flex flex-column">
+                                <div class="col-12 msg recived m-3" v-for="(message, index) in contacts[activeChat].messages" :key="index">
+                                    <p class="p-2 mb-0 text-start">{{ message.message }}</p>
                                     <div class="col-12 mt-0 last-seen p-1 text-end">
-                                        11:32
+                                        {{ message.date }}
                                     </div>
                                 </div>
                             </div>

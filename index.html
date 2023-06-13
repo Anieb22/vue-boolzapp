@@ -32,7 +32,7 @@
                             <img :src="contacts[activeChat].avatar" alt="propic" class="rounded-circle propic-size m-2">
                             <div class="d-flex flex-column justify-content-end">
                                 <h5 class="m-0">{{contacts[activeChat].name}}</h5>
-                                <p class="last-seen m-0">ultimo accesso alle 12:00</p>
+                                <p class="last-seen m-0">ultimo accesso alle {{ contacts[activeChat].lastSeen }}</p>
                             </div>
                         </div>
                         <div>
@@ -74,7 +74,7 @@
                                     <img :src="contact.avatar" alt="propic" class="rounded-circle propic-size m-2">
                                     <div class="d-flex flex-column justify-content-end">
                                         <h5 class="m-0">{{contact.name}}</h5>
-                                        <p class="last-seen m-0">Ultimo messaggio inviato</p>
+                                        <p class="last-seen m-0">Ultimo messaggio inviato {{ contact.messages[contact.messages.length - 1].date }}</p>
                                     </div>
                                 </div>
                             </li>

@@ -69,7 +69,7 @@
                           </div>
                           <!--LISTA CHAT-->
                           <ul class="list-group overflow-y-scroll" style="height: 670px;">
-                            <li v-for="(contact, index) in contacts" class="list-group-item" aria-current="true" :class="activeChat === index ? 'active-item' : ''" @click="changeImg(index)">
+                            <li v-for="(contact, index) in contacts" class="list-group-item" aria-current="true" :class="activeChat === index ? 'active-item' : ''" @click="changeChat(index)">
                                 <div class="d-flex align-items-center">
                                     <img :src="contact.avatar" alt="propic" class="rounded-circle propic-size m-2">
                                     <div class="d-flex flex-column justify-content-end">

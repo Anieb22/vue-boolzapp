@@ -172,7 +172,7 @@ createApp({
   },
 
   methods: {
-    changeImg(index) {
+    changeChat(index) {
       this.activeChat = index;
     }
   }

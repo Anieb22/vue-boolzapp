@@ -83,29 +83,19 @@
                     <!--CHATROOM-->
                     <div class="col-7">
                         <div class="bg-chat overflow-y-scroll">
-                            <div class="col-12 d-flex justify-content-end">
-                                <div class="col-6 d-flex align-items-end flex-column">
-                                    <div class="col-12 msg m-3" v-for="(message, index) in contacts[activeChat].messages" :key="index">
-                                        <ul class="list-group">
-                                            <li class="list-group-item sended p-2 mb-0 text-end">
-                                                {{ message.message }}
-                                                <div class="col-12 mt-0 last-seen p-1 text-end">
-                                                    {{ message.date }}
-                                                </div>    
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>    
+                            <div class="col-12 d-flex justify-content-end flex-column">
+                                <div
+                                  class="col-12 msg m-3"
+                                  v-bind:class="{ 'sent': message.status === 'sent', 'received': message.status === 'received' }"
+                                  v-for="(message, index) in contacts[activeChat].messages"
+                                  :key="index">
+                                  <p class="p-2 mb-0 text-start">{{ message.message }}</p>
+                                  <div class="col-12 mt-0 last-seen p-1 text-end">
+                                    {{ message.date }}
+                                  </div>
+                              </div>
                             </div>
-                            <div class="col-6 w-50 d-flex flex-column">
-                                <div class="col-12 msg recived m-3" v-for="(message, index) in contacts[activeChat].messages" :key="index">
-                                    <p class="p-2 mb-0 text-start">{{ message.message }}</p>
-                                    <div class="col-12 mt-0 last-seen p-1 text-end">
-                                        {{ message.date }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                     </div>
                         <!--AREA MESSAGGIO-->
                         <div class="col-12 bg-light d-flex justify-content-between p-2">
                             <div class="col-1 d-flex align-items-center justify-content-center">

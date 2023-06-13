@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="app">
     <header>
         <div class="container">
             <div class="row">
@@ -68,74 +69,11 @@
                           </div>
                           <!--LISTA CHAT-->
                           <ul class="list-group overflow-y-scroll" style="height: 670px;">
-                            <li class="list-group-item active-item" aria-current="true">
+                            <li v-for="(contact, index) in contacts" class="list-group-item" aria-current="true" :class="activeChat === index ? 'active-item' : ''" @click="changeImg(index)">
                                 <div class="d-flex align-items-center">
-                                    <img src="./img/avatar_1.jpg" alt="propic" class="rounded-circle propic-size m-2">
+                                    <img :src="contact.avatar" alt="propic" class="rounded-circle propic-size m-2">
                                     <div class="d-flex flex-column justify-content-end">
-                                        <h5 class="m-0">Michele</h5>
-                                        <p class="last-seen m-0">Ultimo messaggio inviato</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="d-flex align-items-center">
-                                    <img src="./img/avatar_2.jpg" alt="propic" class="rounded-circle propic-size m-2">
-                                    <div class="d-flex flex-column justify-content-end">
-                                        <h5 class="m-0">Fabio</h5>
-                                        <p class="last-seen m-0">Ultimo messaggio inviato</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="d-flex align-items-center">
-                                    <img src="./img/avatar_3.jpg" alt="propic" class="rounded-circle propic-size m-2">
-                                    <div class="d-flex flex-column justify-content-end">
-                                        <h5 class="m-0">Samuele</h5>
-                                        <p class="last-seen m-0">Ultimo messaggio inviato</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="d-flex align-items-center">
-                                    <img src="./img/avatar_4.jpg" alt="propic" class="rounded-circle propic-size m-2">
-                                    <div class="d-flex flex-column justify-content-end">
-                                        <h5 class="m-0">Alessandro B.</h5>
-                                        <p class="last-seen m-0">Ultimo messaggio inviato</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="d-flex align-items-center">
-                                    <img src="./img/avatar_5.jpg" alt="propic" class="rounded-circle propic-size m-2">
-                                    <div class="d-flex flex-column justify-content-end">
-                                        <h5 class="m-0">Alessandro L.</h5>
-                                        <p class="last-seen m-0">Ultimo messaggio inviato</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="d-flex align-items-center">
-                                    <img src="./img/avatar_6.jpg" alt="propic" class="rounded-circle propic-size m-2">
-                                    <div class="d-flex flex-column justify-content-end">
-                                        <h5 class="m-0">Claudia</h5>
-                                        <p class="last-seen m-0">Ultimo messaggio inviato</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="d-flex align-items-center">
-                                    <img src="./img/avatar_7.jpg" alt="propic" class="rounded-circle propic-size m-2">
-                                    <div class="d-flex flex-column justify-content-end">
-                                        <h5 class="m-0">Federico</h5>
-                                        <p class="last-seen m-0">Ultimo messaggio inviato</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="d-flex align-items-center">
-                                    <img src="./img/avatar_8.jpg" alt="propic" class="rounded-circle propic-size m-2">
-                                    <div class="d-flex flex-column justify-content-end">
-                                        <h5 class="m-0">Davide</h5>
+                                        <h5 class="m-0">{{contact.name}}</h5>
                                         <p class="last-seen m-0">Ultimo messaggio inviato</p>
                                     </div>
                                 </div>
@@ -241,10 +179,10 @@
                             <div class="col-1 d-flex align-items-center justify-content-center">
                                 <i class="fa-regular fa-face-smile"></i>
                             </div>
-                            <div class="col-10 d-flex align-items-center justify-content-center"">
-                                <input class="form-control p-2" type="text" placeholder="Default input" aria-label="default input example">
+                            <div class="col-10 d-flex align-items-center justify-content-center">
+                                <input class="form-control p-2" type="text" placeholder="Scrivi un messaggio" aria-label="default input example">
                             </div>
-                            <div class="col-1 d-flex align-items-center justify-content-center"">
+                            <div class="col-1 d-flex align-items-center justify-content-center">
                                 <i class="fas fa-microphone"></i>
                             </div>
                         </div>
@@ -253,6 +191,7 @@
             </div>
         </div>
     </main>
+    </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/javascript.js"></script>
 </body>

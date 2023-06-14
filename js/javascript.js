@@ -188,15 +188,18 @@ createApp({
 
     addMessage() {
         const activeContact = this.contacts[this.activeChat];
-      
+        const newMessageContent = this.newMessage.trim();
+
+        if (newMessageContent !== '') {
         activeContact.messages.push({
           date: '10/01/2020 15:50',
           message: this.newMessage,
           status: 'sent'
         });
-      
+    }
         this.newMessage = '';
-
+        const lastMessage = activeContact.messages[activeContact.messages.length - 1];
+      if (lastMessage.status === 'sent'){
         setTimeout(() => {
             let response = {
               date: '10/01/2020 15:51:00',
@@ -206,7 +209,9 @@ createApp({
         
             activeContact.messages.push(response);
           }, 1000);
-        },
+        }
+      },
+        
       
     
     searchChat(){

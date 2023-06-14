@@ -175,13 +175,42 @@ createApp({
             }
         ],
 
-      activeChat: 0
+      activeChat: 0,
+      searchText: '',
+      newMessage: '',
     };
   },
 
   methods: {
     changeChat(index) {
       this.activeChat = index;
+    },
+
+    addMessage() {
+        const activeContact = this.contacts[this.activeChat];
+      
+        activeContact.messages.push({
+          date: '10/01/2020 15:50',
+          message: this.newMessage,
+          status: 'sent'
+        });
+      
+        this.newMessage = '';
+      },
+      
+    
+    searchChat(){
+        let search = this.searchText.toLowerCase();
+
+      for (let i = 0; i < this.contacts.length; i++) {
+        let contact = this.contacts[i];
+        if (contact.name.toLowerCase().includes(search)) {
+          contact.visible = true;
+        } else {
+          contact.visible = false;
+            }
+        }
     }
+
   }
 }).mount('#app');

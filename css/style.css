@@ -66,3 +66,14 @@ i:hover{
 .received{
     background-color: white;
 }
+
+.dropdown-btn{
+    display: none;
+}
+
+.dropdown-btn:hover{
+    display: block;
+    justify-self: end;
+    color: grey;
+    cursor: pointer;
+}

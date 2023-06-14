@@ -220,6 +220,12 @@ createApp({
           contact.visible = false;
             }
         }
+    },
+
+    deleteMessage(contact, index) {
+        if (index >= 0 && index < contact.messages.length) {
+          contact.messages.splice(index, 1);
+        }
     }
 
   }
